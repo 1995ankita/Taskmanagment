@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FormBuilderController;
 use App\Http\Controllers\FormsController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\CustomFieldController;
+use App\Http\Controllers\FormBuilderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,4 +41,10 @@ Route::view('read-form-builder/{id}', 'FormBuilder.read');
 Route::get('get-form-builder', [FormsController::class, 'read']);
 Route::post('save-form-transaction', [FormsController::class, 'create']);
 
+
+//Route::resource('categories.categoriesDetail',        CategoryController::class)->name('category.index');
+// Route::resource('category',             [CategoryController::class, 'index'])->name('dashboard.index');
+Route::resource('project',      ProjectController::class);
+Route::get('/customfield',        [CustomFieldController::class, 'index']);
+//Route::get('/customfield',        [CustomFieldController::class, 'index']);
 

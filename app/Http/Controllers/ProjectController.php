@@ -14,8 +14,15 @@ class ProjectController extends Controller
 
         return view('project.create');
     }
-    public function store(){
+    public function store(Request $request){
 
-        //return view('category.create');
+
+        project::create([
+
+            'name' => $request->name,
+        ]);
+
+        session()->flash('success', 'project Created successfully.');
+        return redirect()->route('proectt.list');
     }
 }
