@@ -24,10 +24,10 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Category list</h3>
+                                <h3 class="card-title">project list</h3>
                                 <div class="float-right">
                                     <a class="btn btn-block btn-sm btn-success mb-2"
-                                        href="{{ route('project.create') }}">Create New Category</a>
+                                        href="{{ route('project.create') }}">Create New project</a>
                                     <div class="d-flex flex-column align-items-center">
                                         <div class="custom-control custom-switch">
                                             <input type="checkbox" class="custom-control-input" id="customSwitch1">
@@ -52,10 +52,10 @@
                                         </thead>
                                         <tbody>
                                             {{-- Loop through your categories and populate the table --}}
-                                            @foreach ($categories as $category)
+                                            @foreach ($projects as $project)
                                                 <tr>
-                                                    <td>{{ $category->id }}</td>
-                                                    <td>{{ $category->name }}</td>
+                                                    <td>{{ $project->id }}</td>
+                                                    <td>{{ $project->name }}</td>
                                                     {{-- <td>{{ $category->created_at ? $category->created_at->format('Y-m-d') : '' }}</td>
                                                     <td>{{ $category->created_at ? $category->created_at->format('H:i:s') : '' }}</td>
                                                     <td>{{ $category->creator->name ?? '' }}</td>

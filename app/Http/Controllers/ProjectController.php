@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 class ProjectController extends Controller
 {
     public function index(){
-        $categories = project::all();
-        return view('project.list', compact('categories'));
+        $projects = project::all();
+        return view('project.list', compact('projects'));
     }
     public function create(){
 
