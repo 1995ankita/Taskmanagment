@@ -32,7 +32,7 @@ class ProjectController extends Controller
     public function edit(project $project)
     {
         // echo"fdgg";
-        $project = project::with('creator')->find($project->id);
+        $project = project::find($project->id);
 
         return view('project.edit', compact('project'));
     }

@@ -55,7 +55,7 @@
                                             @foreach ($projects as $project)
                                                 <tr>
                                                     <td>{{ $project->id }}</td>
-                                                    <td>{{ $project->name }}</td>
+                                                    <td><a href="{{ route('project.board.index', $project->id) }}">{{ $project->name }}
                                                     <td>
                                                         <a href="{{ route('project.edit', $project->id) }}" class="fas fa-edit"></a>
                                                         <a href="#" class="delete-link"
