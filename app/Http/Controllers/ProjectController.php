@@ -23,6 +23,6 @@ class ProjectController extends Controller
         ]);
 
         session()->flash('success', 'project Created successfully.');
-        return redirect()->route('proectt.list');
+        return redirect()->route('project.index');
     }
 }
