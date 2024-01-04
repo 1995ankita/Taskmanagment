@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BoardController;
 use App\Http\Controllers\FormsController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\CustomFieldController;
@@ -45,6 +46,14 @@ Route::post('save-form-transaction', [FormsController::class, 'create']);
 //Route::resource('categories.categoriesDetail',        CategoryController::class)->name('category.index');
 // Route::resource('category',             [CategoryController::class, 'index'])->name('dashboard.index');
 Route::resource('project',      ProjectController::class);
+
+Route::get('/project/{project}/edit', [ProjectController::class, 'edit'])->name('project.edit');
+Route::delete('/project/{project}', [ProjectController::class, 'destroy'])->name('project.destroy');
 Route::get('/customfield',        [CustomFieldController::class, 'index']);
 //Route::get('/customfield',        [CustomFieldController::class, 'index']);
+
+Route::resource('board', BoardController::class);
+Route::get('/board/{board}/edit', [BoardController::class, 'edit'])->name('board.edit');
+Route::delete('/board/{board}', [BoardController::class, 'destroy'])->name('board.destroy');
+
 
