@@ -8,11 +8,10 @@ use Illuminate\Http\Request;
 class FormBuilderController extends Controller
 {
     //
-    public function index()
+    public function index(Request $request,$projectId,$boardId)
     {
         $forms = FormBuilder::all();
-
-        return view('FormBuilder.index', compact('forms'));
+        return view('project.board.FormBuilder.index', compact('forms'));
     }
 
 

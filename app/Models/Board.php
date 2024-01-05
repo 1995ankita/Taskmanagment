@@ -13,7 +13,7 @@ class Board extends Model
     use SoftDeletes;
     protected $dates = ['deleted_at'];
     protected $fillable = [
-        'name', 'created_by', 'updated_at'
+        'name', 'project_id','created_by', 'updated_at'
     ];
 }
 

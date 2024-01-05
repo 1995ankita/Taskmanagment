@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('boards', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->timestamps();
-            $table->softDeletes();
+        Schema::table('boards', function (Blueprint $table) {
+            $table->unsignedBigInteger('project_id')->nullable();
         });
     }
 
@@ -24,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('board');
+        Schema::table('boards', function (Blueprint $table) {
+            //
+        });
     }
 };
