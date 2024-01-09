@@ -29,7 +29,7 @@
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('token')
             },
-            url: '{{ URL('save-form-builder') }}',
+            url: '{{ URL('task.store') }}',
             data: {
                 'form': form,
                 'name': $("#name").val(),

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TaskController;
 use App\Http\Controllers\BoardController;
 use App\Http\Controllers\FormsController;
 use App\Http\Controllers\ProjectController;
@@ -23,18 +24,25 @@ Route::get('/', function () {
 
 
 // Step 1
-Route::get('form-builder', [FormBuilderController::class, 'index']);
+// Route::get('form-builder', [FormBuilderController::class, 'index']);
 // Step 2
-Route::view('formbuilder', 'FormBuilder.create');
-// Step 3
-Route::post('save-form-builder', [FormBuilderController::class, 'create']);
-// Step 4
-Route::delete('form-delete/{id}', [FormBuilderController::class, 'destroy']);
+// Route::view('formbuilder', 'FormBuilder.create');
+Route::view('task', 'task.create');
 
-// Step 5
-Route::view('edit-form-builder/{id}', 'FormBuilder.edit');
-Route::get('get-form-builder-edit', [FormBuilderController::class, 'editData']);
-Route::post('update-form-builder', [FormBuilderController::class, 'update']);
+// Step 3
+// Route::post('save-task', [TaskController::class, 'store']);
+
+
+// // Step 4
+// Route::delete('form-delete/{id}', [FormBuilderController::class, 'destroy']);
+
+// // Step 5
+// Route::view('edit-form-builder/{id}', 'FormBuilder.edit');
+// Route::view('edit-form-builder/{projectId}/{boardId}/{taskId}', 'project.board.task.edit');
+Route::view('edit-form-builder/{projectId}/{boardId}/{taskId}', 'project.board.task.edit')->name('edit-form-builder');
+
+Route::get('get-form-builder-edit', [TaskController::class, 'editData']);
+Route::post('update-form-builder', [TaskController::class, 'update']);
 
 // Step 6
 Route::view('read-form-builder/{id}', 'FormBuilder.read');
@@ -45,9 +53,10 @@ Route::post('save-form-transaction', [FormsController::class, 'create']);
 
 Route::resource('project',      ProjectController::class);
 Route::resource('project.board', BoardController::class);
-Route::resource('project.board.task', FormBuilderController::class)->parameters([
+Route::resource('project.board.task', TaskController::class)->parameters([
     'project' => 'projectId',
     'board' => 'boardId',
+    'task' => 'taskId',
 ]);
 
 

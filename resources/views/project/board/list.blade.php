@@ -57,15 +57,16 @@
                                                             href="{{ route('project.board.task.index', ['projectId' => $id, 'boardId' => $board->id]) }}">{{ $board->name }}
                                                     </td>
                                                     <td>
-                                                        <a href="{{ route('project.board.edit', ['project' => $id, 'board' => $board->id]) }}" class="fas fa-edit"></a>
+                                                        <a href="{{ route('project.board.edit', ['project' => $id, 'board' => $board->id]) }}"
+                                                            class="fas fa-edit"></a>
 
                                                         <a href="#" class="delete-link"
                                                             onclick="event.preventDefault(); if (confirm('Are you sure you want to delete this board?')) document.getElementById('delete-form-{{ $board->id }}').submit();">
                                                             <i class="fas fa-trash text-danger"></i>
                                                         </a>
-                                                         <form id="delete-form-{{ $board->id }}"
-                                                            action="{{ route('project.board.destroy',['project' => $id, 'board' => $board->id]) }}" method="POST"
-                                                            style="display: none;">
+                                                        <form id="delete-form-{{ $board->id }}"
+                                                            action="{{ route('project.board.destroy', ['project' => $id, 'board' => $board->id]) }}"
+                                                            method="POST" style="display: none;">
                                                             @csrf
                                                             @method('DELETE')
                                                         </form>
