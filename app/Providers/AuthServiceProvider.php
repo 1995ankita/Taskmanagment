@@ -19,8 +19,11 @@ class AuthServiceProvider extends ServiceProvider
     /**
      * Register any authentication / authorization services.
      */
-    public function boot(): void
+    public function boot()
     {
-        //
+        // $this->registerPolicies();
+
+        // Role::create(['name' => 'previous_user']);
+        // Create more roles as needed
     }
 }

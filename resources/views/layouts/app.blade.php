@@ -60,8 +60,6 @@
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('adminlte/dist/css/adminlte.min.css') }}">
-    <script src="{{ URL::asset('assets/js/jquery-3.7.1.min.js') }}"></script>
-    <script src="{{ URL::asset('assets/bootstrap-5.3.2-dist/js/bootstrap.min.js') }}"></script>
 
 
 
@@ -85,7 +83,7 @@
                 </li>
             </ul>
 
-            {{-- <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown user-menu">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                         <img src="https://assets.infyom.com/logo/blue_logo_150x150.png"
@@ -115,7 +113,7 @@
                         </li>
                     </ul>
                 </li>
-            </ul> --}}
+            </ul>
         </nav>
         <!-- /.navbar -->
 
@@ -159,7 +157,6 @@
         <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
-
 
     <!-- jQuery -->
     <script src="{{ asset('adminlte/plugins/jquery/jquery.min.js') }}"></script>
@@ -217,9 +214,6 @@
     <script src="{{ asset('adminlte/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
     <script src="{{ asset('adminlte/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
     <script src="{{ asset('adminlte/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
-    <script src="{{ URL::asset('assets/form-builder/form-builder.min.js') }}"></script> --}}
-
 </body>
 
 </html>
@@ -230,10 +224,7 @@
             var country_id = $(this).val();
             var country_code = $(this).find(':selected').data('codeselect');
             window.location.href = "/" + country_code + "/country_change";
-            // window.location.href =  "/dashboard";
+          // window.location.href =  "/dashboard";
         });
     });
 </script>
-
-
-

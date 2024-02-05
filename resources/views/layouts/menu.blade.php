@@ -1,11 +1,32 @@
 <!-- need to remove -->
 <li class="nav-item">
     {{-- <a class="nav-link"> --}}
-        <a href="{{ route('project.index') }}" class="nav-link {{ Request::is('home') ? 'active' : '' }}">
+    <a href="{{ route('folders.index') }}" class="nav-link {{ Request::is('home') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>folders</p>
+    </a>
+    <a href="{{ route('files.index') }}" class="nav-link {{ Request::is('home') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>files</p>
+    </a>
+    <a href="{{ route('users.index') }}" class="nav-link {{ Request::is('home') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>users</p>
+    </a>
+
+    <a href="{{ route('permissions.index') }}" class="nav-link {{ Request::is('home') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>permission</p>
+    </a>
+    {{-- <a href="{{ route('documents.index') }}" class="nav-link {{ Request::is('home') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>documents</p>
+        <a href="{{ route('permissions.index') }}" class="nav-link {{ Request::is('home') ? 'active' : '' }}">
             <i class="nav-icon fas fa-home"></i>
-            <p>project</p>
-        </a>
-    {{-- </a> --}}
+            <p>permission</p> --}}
+
+        {{-- </a> --}}
+        {{-- </a> --}}
 </li>
 {{-- @if (in_array('Admin', array_column(Auth::user()->roles->toArray(), 'name')))
     <li class="nav-item">
